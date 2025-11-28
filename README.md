@@ -1,0 +1,18 @@
+- **Shortcuts**
+    - P- Protocol
+    - B- Byte
+    - b- bit
+    - RT- Routing Table
+    - net- network
+    - int- interface
+    - sub- subnet mask
+    - wild- wildcard mask
+    - b/w- between
+    - diff- different
+    - comm- communication
+    - src- source
+    - dest- destination
+    - SW- switch
+    - Ro- Router
+    - PV- priority value
+    - Bw- Bandwidth
