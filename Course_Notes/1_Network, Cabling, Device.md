@@ -1,18 +1,8 @@
----
-title: 1_Network, Cabling, Devices
-updated: 2025-11-22 07:02:07Z
-created: 2025-09-10 05:20:29Z
-tags:
-  - cable
-  - network
-  - network devices
----
-
 ## <ins>**Network**</ins>
 
 - <ins>**Group of interconnected nodes/links/devices that exchange data and share resources via a media.**</ins>
     
-- Topics- <img src="../../_resources/ec8b43b533766d2c1e1db7e830d7dd6d.png" alt="ec8b43b533766d2c1e1db7e830d7dd6d.png" width="243" height="277" class="jop-noMdConv">
+- Topics- <img src="github.com/patiljaykumar/CCNA_CCNP-NOTES/blob/_resources/ec8b43b533766d2c1e1db7e830d7dd6d.png" alt="ec8b43b533766d2c1e1db7e830d7dd6d.png" width="243" height="277" class="jop-noMdConv">
     
 
 ### **Types of communication modes-** depends on Device NIC, Cable type, Config
