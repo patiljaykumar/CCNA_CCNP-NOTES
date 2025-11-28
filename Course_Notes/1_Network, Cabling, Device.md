@@ -2,8 +2,7 @@
 
 - <ins>**Group of interconnected nodes/links/devices that exchange data and share resources via a media.**</ins>
     
-- Topics- <img src="github.com/patiljaykumar/CCNA_CCNP-NOTES/blob/_resources/ec8b43b533766d2c1e1db7e830d7dd6d.png" alt="ec8b43b533766d2c1e1db7e830d7dd6d.png" width="243" height="277" class="jop-noMdConv">
-    
+- Topics- <img src="../resources/ec8b43b533766d2c1e1db7e830d7dd6d.png" alt="ec8b43b533766d2c1e1db7e830d7dd6d.png" width="243" height="277" class="jop-noMdConv">
 
 ### **Types of communication modes-** depends on Device NIC, Cable type, Config
 
