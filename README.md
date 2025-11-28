@@ -1,1 +1,0 @@
-# CCNA and CCNP NOTES
