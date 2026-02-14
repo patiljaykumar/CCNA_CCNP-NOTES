@@ -2,7 +2,7 @@
 
 - <ins>**Group of interconnected nodes/links/devices that exchange data and share resources via a media.**</ins>
     
-- Topics- <img src="../../_resources/ec8b43b533766d2c1e1db7e830d7dd6d.png" alt="ec8b43b533766d2c1e1db7e830d7dd6d.png" width="243" height="277" class="jop-noMdConv">
+- Topics- <img src="../resources/ec8b43b533766d2c1e1db7e830d7dd6d.png" alt="ec8b43b533766d2c1e1db7e830d7dd6d.png" width="243" height="277" class="jop-noMdConv">
     
 
 * * *
@@ -120,7 +120,7 @@
     
     - eg- 8.8.8.8- DNS- directs traffic to nearest server, DDOS mitigation
         
-    - <img src="../../_resources/6fd879cdbb2e0aff2574b58c45646899.png" alt="6fd879cdbb2e0aff2574b58c45646899.png" width="237" height="99" class="jop-noMdConv">
+    - <img src="../resources/6fd879cdbb2e0aff2574b58c45646899.png" alt="6fd879cdbb2e0aff2574b58c45646899.png" width="237" height="99" class="jop-noMdConv">
         
         - **Path 1: Client → R-Core → R1 → S1** | **Path 2: Client → R-Core → R2 → S2**
 
@@ -137,8 +137,8 @@
 
 - **T568 A**
 - **T568 B**
-    - **<img src="../../_resources/73c0536e42192cd33d75585c236ec2c5.png" alt="73c0536e42192cd33d75585c236ec2c5.png" width="100" height="197" class="jop-noMdConv">**
-- ![7a9ead452b1c5f0215852a0a3df4a296.png](../../_resources/7a9ead452b1c5f0215852a0a3df4a296.png)
+    - **<img src="../resources/73c0536e42192cd33d75585c236ec2c5.png" alt="73c0536e42192cd33d75585c236ec2c5.png" width="100" height="197" class="jop-noMdConv">**
+- ![7a9ead452b1c5f0215852a0a3df4a296.png](../resources/7a9ead452b1c5f0215852a0a3df4a296.png)
 
 * * *
 
@@ -156,16 +156,16 @@
 ### **Network Cabling**
 
 - **Straight through cable**\- If endpoints transmit on diff pin pairs (==MDI-MDIX==) (Both side T568A/T568B) eg-==(PC connected to Switch/Hub), (Router-Switch/Hub), (Server-Switch/Hub)==
-    - 100Mbps-<img src="../../_resources/e81527309013466d6d563780e6cce7f3.png" alt="e81527309013466d6d563780e6cce7f3.png" width="279" height="150" class="jop-noMdConv">
+    - 100Mbps-<img src="../resources/e81527309013466d6d563780e6cce7f3.png" alt="e81527309013466d6d563780e6cce7f3.png" width="279" height="150" class="jop-noMdConv">
         - 10BASE-T, 100BASE-T :- 100= 100Mbps | BASE= Ethernet transmission | T- twisted pair cable
         - PoE(802.3af/at)- Power over Ethernet can be done with 4,5,7,8 pins (not sure- or 7,8- POE | 4,5- Earthing)
-    - 1Gbps-  <img src="../../_resources/11f142e402f3def69fd60cf83b44a135.png" alt="11f142e402f3def69fd60cf83b44a135.png" width="260" height="141" class="jop-noMdConv">
+    - 1Gbps-  <img src="../resources/11f142e402f3def69fd60cf83b44a135.png" alt="11f142e402f3def69fd60cf83b44a135.png" width="260" height="141" class="jop-noMdConv">
         - All 4 pairs are used for data transmission simultaneously (DA- Data A)
 - **Crossover cable**\- If endpoints transmit on same pin pair. same port config (==MDI-MDI & MDIX-MDIX==) (One side T568A, other side T568B) eg-==**(PC-Router), (Router-WAP), (Router-Server), (Router-Router), (PC-PC), (Switch/Hub- Switch/Hub)**==
-    - 100Mbps-<img src="../../_resources/938db3a568f4ac0e228b46206fc40df5.png" alt="938db3a568f4ac0e228b46206fc40df5.png" width="291" height="156" class="jop-noMdConv">
-    - 1Gbps- <img src="../../_resources/195fcbca50e7fe98ed55f2c29d226978.png" alt="195fcbca50e7fe98ed55f2c29d226978.png" width="333" height="169" class="jop-noMdConv">
+    - 100Mbps-<img src="../resources/938db3a568f4ac0e228b46206fc40df5.png" alt="938db3a568f4ac0e228b46206fc40df5.png" width="291" height="156" class="jop-noMdConv">
+    - 1Gbps- <img src="../resources/195fcbca50e7fe98ed55f2c29d226978.png" alt="195fcbca50e7fe98ed55f2c29d226978.png" width="333" height="169" class="jop-noMdConv">
 - **Rollover cable**\- console cable
-    - <img src="../../_resources/dce98bf30dc38369eeaee26740191073.png" alt="dce98bf30dc38369eeaee26740191073.png" width="270" height="176" class="jop-noMdConv">
+    - <img src="../resources/dce98bf30dc38369eeaee26740191073.png" alt="dce98bf30dc38369eeaee26740191073.png" width="270" height="176" class="jop-noMdConv">
 - Now a days ==**Auto MDIX**==\- electrical pulses to sense cable pinout(swaps/redirect e-signals btw T to R auto) is present in all network devices (so we use straight through cables for all)
     - if switch- need to enable it on switch int \[1 side or both\] - `mdix auto` | verify- `sh int <int> transceiver properties`
 
@@ -228,7 +228,7 @@
     - convert data signals into a format suitable for network transmission and receive incoming signals
     - PC has RJ45 ports as NIC(Network Interface card) which can be  expansion card or built into system
         
-        - <img src="../../_resources/b8c4783866b56ba9bfcd450b718e1d4d.png" alt="b8c4783866b56ba9bfcd450b718e1d4d.png" width="168" height="179" class="jop-noMdConv">
+        - <img src="../resources/b8c4783866b56ba9bfcd450b718e1d4d.png" alt="b8c4783866b56ba9bfcd450b718e1d4d.png" width="168" height="179" class="jop-noMdConv">
 
 * * *
 

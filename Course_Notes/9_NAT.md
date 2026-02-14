@@ -129,7 +129,7 @@
 
 ### Practical
 
-- <img src="../../_resources/0bd2f135c2bfbf59f5f7bd9e5a59a6ca.png" alt="0bd2f135c2bfbf59f5f7bd9e5a59a6ca.png" width="396" height="262" class="jop-noMdConv"></img>
+- <img src="../resources/0bd2f135c2bfbf59f5f7bd9e5a59a6ca.png" alt="0bd2f135c2bfbf59f5f7bd9e5a59a6ca.png" width="396" height="262" class="jop-noMdConv"></img>
     - <ins>**Static NAT**</ins>
         
     - ```bash
@@ -166,9 +166,9 @@
             ip route 50.1.1.0 255.255.255.0 100.1.1.1
         ```
         
-    - NAT egress (R1)- ICMP src IP is 50.1.1.2 (for 192.168.1.2 PC) but at ARP (L2) level src IP 100.1.1.1) ![6126a5677e5f0d7b4833d1e20634920c.png](../../_resources/6126a5677e5f0d7b4833d1e20634920c.png)
+    - NAT egress (R1)- ICMP src IP is 50.1.1.2 (for 192.168.1.2 PC) but at ARP (L2) level src IP 100.1.1.1) ![6126a5677e5f0d7b4833d1e20634920c.png](../resources/6126a5677e5f0d7b4833d1e20634920c.png)
         
-    - NAT ingress (R1)- ![557d023774084b70d1ddc0de6921038f.png](../../_resources/557d023774084b70d1ddc0de6921038f.png)
+    - NAT ingress (R1)- ![557d023774084b70d1ddc0de6921038f.png](../resources/557d023774084b70d1ddc0de6921038f.png)
         
     - <ins>**Dynamic NAT (on R1)**</ins>
         
@@ -186,7 +186,7 @@
             
         - `ip nat inside source list 10 pool cisco overload`
             
-        - ![e131c742eb6d5200f6503cd7152e84ad.png](../../_resources/e131c742eb6d5200f6503cd7152e84ad.png)
+        - ![e131c742eb6d5200f6503cd7152e84ad.png](../resources/e131c742eb6d5200f6503cd7152e84ad.png)
             
 
 * * *

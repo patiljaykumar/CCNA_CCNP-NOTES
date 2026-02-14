@@ -13,8 +13,8 @@
         - **Reply ARP-** unicast response to requesting device **(Opcode- 2)**
         - ==**Dest/ Target MAC(ARP) – 00-00-00-00-00-00**==
             - ==**Dest MAC (in Ethernet Frame)- FF-FF-FF-FF-FF-FF**==  
-                \-<img src="../../_resources/92c271fa85baf62e5f7fb9a8db3ad8a4.png" alt="92c271fa85baf62e5f7fb9a8db3ad8a4.png" width="807" height="291" class="jop-noMdConv">
-        - <ins>***ARP Header (28B)***</ins><img src="../../_resources/8faeb666a1c9022e1e7c6de1507fadd9.png" alt="8faeb666a1c9022e1e7c6de1507fadd9.png" width="589" height="283" class="jop-noMdConv">
+                \-<img src="../resources/92c271fa85baf62e5f7fb9a8db3ad8a4.png" alt="92c271fa85baf62e5f7fb9a8db3ad8a4.png" width="807" height="291" class="jop-noMdConv">
+        - <ins>***ARP Header (28B)***</ins><img src="../resources/8faeb666a1c9022e1e7c6de1507fadd9.png" alt="8faeb666a1c9022e1e7c6de1507fadd9.png" width="589" height="283" class="jop-noMdConv">
             - **HTYPE (2B)**\- eg Ethernet  |  **PTYPE (2B)**\- L3 protocol eg IPv4(0x800), ICMP(0x800H)
             - **HLEN (1B)**\- 6 for Ethernet  |  **PLEN (1B)**\- 4 for IPv4
     2.  **Reverse ARP-** resolve IP for a known MAC (replaced by DHCP & BootP) **(Opcode- 3**(request)**, 4**(reply)**)**
@@ -40,20 +40,20 @@
             If no Duplication
             
             - PC1 Broadcast msg1,2,3 (ARP Probe)- Sender IP is 0.0.0.0 to avoid corrupting ARP caches
-                - ![ef7e4868c0764213ada80a7ac9d2cb50.png](../../_resources/ef7e4868c0764213ada80a7ac9d2cb50.png)
+                - ![ef7e4868c0764213ada80a7ac9d2cb50.png](../resources/ef7e4868c0764213ada80a7ac9d2cb50.png)
             - PC1 Broadcast msg4 (ARP Announcement)
-                - <img src="../../_resources/209d31287f256da0e6428f82c45d9caa.png" alt="209d31287f256da0e6428f82c45d9caa.png" width="381" height="217" class="jop-noMdConv">
+                - <img src="../resources/209d31287f256da0e6428f82c45d9caa.png" alt="209d31287f256da0e6428f82c45d9caa.png" width="381" height="217" class="jop-noMdConv">
         - If Duplication
             
             - PC1 Broadcast msg1 (ARP Probe) (same as above)
             - PC2 Unicast msg2 to PC1 (duplication found- GARP waits for approx 3s to check duplication before assigning IP)
-                - ![001f136dc1fe30c9242f5246abf23b8b.png](../../_resources/001f136dc1fe30c9242f5246abf23b8b.png)
+                - ![001f136dc1fe30c9242f5246abf23b8b.png](../resources/001f136dc1fe30c9242f5246abf23b8b.png)
             - PC1 Broadcast msg3,4,5 with APIPA IP (ARP Probe)- 169.254.133.238 (similar format to msg1)
             - PC1 Broadcast msg6 (ARP Announcement) IP- 169.254.133.238
 - **ARP table**\- present in IP-enabled devices on LAN. <ins>IP to MAC mapping</ins> (PC, phone, Router, L3-SW)
     
-    - PC`arp -a`\- <img src="../../_resources/9afd396500f7b09f6e148e3138cab0f3.png" alt="9afd396500f7b09f6e148e3138cab0f3.png" width="415" height="67" class="jop-noMdConv">
-    - Router- ![12c12fd732d449c3864e48e11747a94f.png](../../_resources/12c12fd732d449c3864e48e11747a94f.png)
+    - PC`arp -a`\- <img src="../resources/9afd396500f7b09f6e148e3138cab0f3.png" alt="9afd396500f7b09f6e148e3138cab0f3.png" width="415" height="67" class="jop-noMdConv">
+    - Router- ![12c12fd732d449c3864e48e11747a94f.png](../resources/12c12fd732d449c3864e48e11747a94f.png)
 
 * * *
 
@@ -61,7 +61,7 @@
 
 - used by network devices like routers & hosts to send error msgs, info for troubleshooting net
 - **ICMP Header (8B)**
-    - <img src="../../_resources/6f85660d4c1cbc3e592173b059ad7ff6.png" alt="6f85660d4c1cbc3e592173b059ad7ff6.png" width="328" height="213" class="jop-noMdConv">
+    - <img src="../resources/6f85660d4c1cbc3e592173b059ad7ff6.png" alt="6f85660d4c1cbc3e592173b059ad7ff6.png" width="328" height="213" class="jop-noMdConv">
 - **<ins>Type (1B)</ins>\-** type of ICMP msg
     - **Type 0**: Echo Reply (Response to an Echo Request)
         - **Code 0**\- verify connectivity
@@ -227,10 +227,10 @@
     
     - **192.168.100.102** (divide into 4 networks each of 120 devices)
         
-        - ![a6ef872c1017b54e385fa18b814490e0.png](../../_resources/a6ef872c1017b54e385fa18b814490e0.png)
+        - ![a6ef872c1017b54e385fa18b814490e0.png](../resources/a6ef872c1017b54e385fa18b814490e0.png)
     - **172.16.30.0** (divide into 4 networks each of 1000 devices)
         
-        - ![5dabee352a2571fd511c87868709776f.png](../../_resources/5dabee352a2571fd511c87868709776f.png)
+        - ![5dabee352a2571fd511c87868709776f.png](../resources/5dabee352a2571fd511c87868709776f.png)
 
 * * *
 
@@ -266,10 +266,10 @@
     
     - 1
         
-        - ![3b4e7b444ba3a80ee206fd846f57ed81.png](../../_resources/3b4e7b444ba3a80ee206fd846f57ed81.png)
+        - ![3b4e7b444ba3a80ee206fd846f57ed81.png](../resources/3b4e7b444ba3a80ee206fd846f57ed81.png)
     - 2
         
-        - ![4d8e829aa37e5b7f7f35c561f1b23698.png](../../_resources/4d8e829aa37e5b7f7f35c561f1b23698.png)
+        - ![4d8e829aa37e5b7f7f35c561f1b23698.png](../resources/4d8e829aa37e5b7f7f35c561f1b23698.png)
 - **ICMP Type 8**: Echo Request
     
 - **ICMP Type 0**: Echo Reply

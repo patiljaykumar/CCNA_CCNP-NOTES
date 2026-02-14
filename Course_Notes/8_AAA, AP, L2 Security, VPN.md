@@ -309,7 +309,7 @@
     - `ip arp inspection vlan 10`
     - `int <int>`
     - `ip arp inspection trust`
-    - <img src="../../_resources/071d0110caeca1dc40730a053746157e.png" alt="071d0110caeca1dc40730a053746157e.png" width="273" height="149" class="jop-noMdConv">
+    - <img src="../resources/071d0110caeca1dc40730a053746157e.png" alt="071d0110caeca1dc40730a053746157e.png" width="273" height="149" class="jop-noMdConv">
 - **DHCP Snooping config (eg- on switch)**
     
     - `ip dhcp snooping`

@@ -36,7 +36,7 @@
         
     - **Inventory Management-** SNMP can provide details about connected devices (hardware specs, software versions, installed modules) asset tracking and lifecycle  management.
         
-- <img src="../../_resources/28904d4aa2f276aa1d37b24e776dcde8.png" alt="28904d4aa2f276aa1d37b24e776dcde8.png" width="441" height="487" class="jop-noMdConv">
+- <img src="../resources/28904d4aa2f276aa1d37b24e776dcde8.png" alt="28904d4aa2f276aa1d37b24e776dcde8.png" width="441" height="487" class="jop-noMdConv">
 - **SNMP**
     
     - **Router1**
@@ -379,7 +379,7 @@
         - `login local` or `password <pass>` , `login`
     - `do write`
     - `show version`\- check config register no.
-        - ![51f2e07b250e9076e2a5661eb7c53854.png](../../_resources/51f2e07b250e9076e2a5661eb7c53854.png)
+        - ![51f2e07b250e9076e2a5661eb7c53854.png](../resources/51f2e07b250e9076e2a5661eb7c53854.png)
 - ### **Router Password Reset**
     
     1.  **confreg 0x2142 & restart router**
@@ -413,9 +413,9 @@
 - Connect with console cable (disconnect all other cables)
 - Power Off switch
 - Hold Mode button (15-20s)
-    - <img src="../../_resources/6d70b92be6da0d4646277aeb7efcb8e7.png" alt="6d70b92be6da0d4646277aeb7efcb8e7.png" width="328" height="202" class="jop-noMdConv">
+    - <img src="../resources/6d70b92be6da0d4646277aeb7efcb8e7.png" alt="6d70b92be6da0d4646277aeb7efcb8e7.png" width="328" height="202" class="jop-noMdConv">
 - `flash_init`
-    - ![4bd4fca1ee6575fe00e0934ce7a1f7f6.png](../../_resources/4bd4fca1ee6575fe00e0934ce7a1f7f6.png)
+    - ![4bd4fca1ee6575fe00e0934ce7a1f7f6.png](../resources/4bd4fca1ee6575fe00e0934ce7a1f7f6.png)
 - `dir flash:/`
 - `rename flash:config.text flash:config.old` or `delete flash:config.text`
 - `boot`

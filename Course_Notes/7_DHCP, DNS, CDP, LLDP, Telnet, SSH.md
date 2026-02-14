@@ -173,7 +173,7 @@
     
 - Server maintains **DHCP Binding Table**\- mapping MAC- IP, Lease Time, Binding Type(DHCP/static), VLAN(client c), Int info (port to which client connected)
     
-- win- <img src="../../_resources/8b358e77a49173d6f91d30efe3cf2536.png" alt="8b358e77a49173d6f91d30efe3cf2536.png" width="494" height="149">
+- win- <img src="../resources/8b358e77a49173d6f91d30efe3cf2536.png" alt="8b358e77a49173d6f91d30efe3cf2536.png" width="494" height="149">
 - <ins>**Config**</ins>
     
     - `int <int>`, `ip address <ip> <sub>`, `no sh` (eg- 10.1.1.1)
@@ -196,7 +196,7 @@
             
         - `ip helper-address <dhcp_server-ip>`\- If you have clients on diff subnets & want to relay DHCP requests to DHCP server, you can configure DHCP relay on router that connects diff sub
             
-- Server- <img src="../../_resources/25287a695e09ea4436d93302f25d089b.png" alt="25287a695e09ea4436d93302f25d089b.png" width="368" height="222" class="jop-noMdConv">
+- Server- <img src="../resources/25287a695e09ea4436d93302f25d089b.png" alt="25287a695e09ea4436d93302f25d089b.png" width="368" height="222" class="jop-noMdConv">
     
 - optional to save config- `copy running-config startup-config` - not sure
     
