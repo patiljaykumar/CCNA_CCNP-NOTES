@@ -1,8 +1,8 @@
 # SNMP (Simple Network Management Protocol) *UDP- 161, 162 | L-7*
 
-- **UDP 161-** used for general SNMP communication
+- **UDP 161-** used for general SNMP communication ==(Manager ➜ Agent)== \[SNMP **GET**, **GETNEXT**, **GETBULK**, and **SET**\]
     
-- **UDP 162-** used for SNMP traps (asynchronous notifications sent from agents to managers)
+- **UDP 162-** used for SNMP traps (asynchronous notifications sent from agents to managers) ==(Agent ➜ Manager)==
     
 - used for managing & monitoring (stats of node) Network Devices (switches, routers, firewalls, printers, CCTV, Windows, Linux) centrally (v3 used due to encryption, auth)
     
@@ -12,8 +12,14 @@
     
 - SNMP Components- .............................................
     
-- SNMPv1 vs SNMPv2c (error detection) vs SNMP3- .......................................
+- versions
     
+    - **v1:** Basic, no security
+        
+    - **v2c:** Improved error detection, community strings
+        
+    - **v3:** Encryption & authentication (recommended for security)
+        
 - **Management Information Base (MIB**)- database that has structure of SNMP data
     
 - **Functions**
@@ -30,140 +36,152 @@
         
     - **Inventory Management-** SNMP can provide details about connected devices (hardware specs, software versions, installed modules) asset tracking and lifecycle  management.
         
-- <img src="../resources/28904d4aa2f276aa1d37b24e776dcde8.png" alt="28904d4aa2f276aa1d37b24e776dcde8.png" width="289" height="319" class="jop-noMdConv">
+- <img src="../../_resources/28904d4aa2f276aa1d37b24e776dcde8.png" alt="28904d4aa2f276aa1d37b24e776dcde8.png" width="441" height="487" class="jop-noMdConv">
 - **SNMP**
     
     - **Router1**
         
         - ```bash
-                      en
-                      conf t
-                      !
-                      hostname R1
-                      !
-                      line con 0
-                      logging sync
-                      !
-                      no ip domain lookup
-                      !
-                      int g0/0
-                      ip nat inside
-                      ip address 192.168.70.10 255.255.255.0
-                      standby1 ip 192.168.70.254
-                      standby 1 priority 110
-                      standby 1 preempt
-                      no sh
-                      !
-                      int g0/1
-                      ip nat inside
-                      ip address 192.168.12.1 255.255.255.0
-                      no sh
-                      !
-                      int g0/2
-                      ip nat outside	
-                      ip address dhcp
-                      no sh
-                      !
-                      ip route 0.0.0.0 0.0.0.0 g0/2 172.16.1.1	
-                      ip route 192.168.70.0 255.255.255.0 g0/1 192.168.12.2	
-                      !
-                      access-list 1 permit 192.168.70.0 0.0.0.255
-                      !
-                      ip nat inside source list 1 interface g0/2	
-                      !
-                      ip domain-name cisco.com
-                      !
-                      cry key gen rsa mod 1024	
-                      !
-                      username admin pri 15 pass cisco
-                      !
-                      line vty 0 4
-                      login local
-                      tr in ssh
-                      !
+          en
+          conf t
+          !
+          hostname R1
+          !
+          line con 0
+          logging sync
+          !
+          no ip domain lookup
+          !
+          int g0/0
+          ip nat inside
+          ip address 192.168.70.10 255.255.255.0
+          standby1 ip 192.168.70.254
+          standby 1 priority 110
+          standby 1 preempt
+          no sh
+          !
+          int g0/1
+          ip nat inside
+          ip address 192.168.12.1 255.255.255.0
+          no sh
+          !
+          int g0/2
+          ip nat outside	
+          ip address dhcp
+          no sh
+          !
+          ip route 0.0.0.0 0.0.0.0 g0/2 172.16.1.1	
+          ip route 192.168.70.0 255.255.255.0 g0/1 192.168.12.2	
+          !
+          access-list 1 permit 192.168.70.0 0.0.0.255
+          !
+          ip nat inside source list 1 interface g0/2	
+          !
+          ip domain-name cisco.com
+          !
+          cry key gen rsa mod 1024	
+          !
+          username admin pri 15 pass cisco
+          !
+          line vty 0 4
+          login local
+          tr in ssh
+          !
             ```
+            
+        - `ping 192.168.70.94`
+            
+        - `snmp-server community public rw`\- SNMP comm with help of community string= read-only & read-write
             
     - **Router2**
         
         - ```bash
-                      en
-                      conf t
-                      !
-                      hostname R2
-                      !
-                      line con 0
-                      logging sync
-                      !
-                      no ip domain lookup
-                      !
-                      int g0/0
-                      ip nat inside
-                      ip address 192.168.70.20 255.255.255.0
-                      standby1 ip 192.168.70.254
-                      standby 1 priority 90
-                      no sh
-                      !
-                      int g0/1
-                      ip nat inside
-                      ip address 192.168.12.2 255.255.255.0
-                      no sh
-                      !
-                      int g0/2
-                      ip nat outside	
-                      ip address dhcp
-                      no sh
-                      !
-                      ip route 0.0.0.0 0.0.0.0 g0/2 172.16.1.1	
-                      ip route 192.168.70.0 255.255.255.0 g0/1 192.168.12.1	
-                      !
-                      access-list 1 permit 192.168.70.0 0.0.0.255
-                      !
-                      ip nat inside source list 1 interface g0/2	
-                      !
-                      ip domain-name cisco.com
-                      !
-                      cry key gen rsa mod 1024	
-                      !
-                      username admin pri 15 pass cisco
-                      !
-                      line vty 0 4
-                      login local
-                      tr in ssh
-                      !
+          en
+          conf t
+          !
+          hostname R2
+          !
+          line con 0
+          logging sync
+          !
+          no ip domain lookup
+          !
+          int g0/0
+          ip nat inside
+          ip address 192.168.70.20 255.255.255.0
+          standby1 ip 192.168.70.254
+          standby 1 priority 90
+          no sh
+          !
+          int g0/1
+          ip nat inside
+          ip address 192.168.12.2 255.255.255.0
+          no sh
+          !
+          int g0/2
+          ip nat outside	
+          ip address dhcp
+          no sh
+          !
+          ip route 0.0.0.0 0.0.0.0 g0/2 172.16.1.1	
+          ip route 192.168.70.0 255.255.255.0 g0/1 192.168.12.1	
+          !
+          access-list 1 permit 192.168.70.0 0.0.0.255
+          !
+          ip nat inside source list 1 interface g0/2	
+          !
+          ip domain-name cisco.com
+          !
+          cry key gen rsa mod 1024	
+          !
+          username admin pri 15 pass cisco
+          !
+          line vty 0 4
+          login local
+          tr in ssh
+          !
             ```
+            
+        - `snmp-server community public rw`
             
     - **Switch**
         
         - ```bash
-                      en
-                      conf t
-                      !
-                      hostname Switch
-                      !
-                      line con 0
-                      logging sync
-                      !
-                      no ip domain lookup
-                      !
-                      int r g0/0-3, g1/0-1
-                      spanning-tree portfast
-                      !
-                      interface vlan 1
-                      ip address 192.168.70.50 255.255.255.0
-                      no sh
-                      !
-                      ip domain-name cisco.com
-                      !
-                      cry key gen rsa mod 1024	
-                      !
-                      username admin pri 15 pass cisco
-                      !
-                      line vty 0 4
-                      login local
-                      tr in ssh
-                      !
+          en
+          conf t
+          !
+          hostname Switch
+          !
+          line con 0
+          logging sync
+          !
+          no ip domain lookup
+          !
+          int r g0/0-3, g1/0-1
+          spanning-tree portfast
+          !
+          interface vlan 1
+          ip address 192.168.70.50 255.255.255.0
+          no sh
+          !
+          ip domain-name cisco.com
+          !
+          cry key gen rsa mod 1024	
+          !
+          username admin pri 15 pass cisco
+          !
+          line vty 0 4
+          login local
+          tr in ssh
+          !
             ```
             
+        - `<span>snmp-server community public rw</span>`
+            
+    - <span>**Windows7**</span>
+        
+        - <span>check if SNMP service is ON</span>
+        - SNMP Service Properties → Security tab → Add (read-write "public") → Add accept from IPs (<ins>Apply-OK</ins>)
     - <span>**line con 0**\-</span>
         
     - <span>**logging sync**\- log should not interfere with typing commands (if log in btw command move to next line)</span>
@@ -347,38 +365,46 @@
 
 * * *
 
-### Reset Router password (not sure)
+### Reset Router password
 
 - <ins>**config register 0x2102 behaviour**</ins>\- When Router starts- loads IOS from Flash mem to RAM, loads config from NVRAM to RAM
+    
 - <ins>**config register 0x2142 behaviour**</ins>\- When Router starts- loads IOS from Flash mem to RAM, no NVRAM config
+    
 - Password set (unknown to us)
+    
     - `enable password <pass>` &/or
         - `username <usrn> privilege <level> secret <pass>` or with password (level mostly - 15)
         - `line con 0`
         - `login local` or `password <pass>` , `login`
     - `do write`
     - `show version`\- check config register no.
-        - ![51f2e07b250e9076e2a5661eb7c53854.png](../resources/51f2e07b250e9076e2a5661eb7c53854.png)
-- To Reset- restart router
-    - rommon mode- while restarting press <ins>**Ctrl+C**</ins>
+        - ![51f2e07b250e9076e2a5661eb7c53854.png](../../_resources/51f2e07b250e9076e2a5661eb7c53854.png)
+- ### **Router Password Reset**
+    
+    1.  **confreg 0x2142 & restart router**
+        - rommon mode- while restarting press <ins>**Ctrl+C**</ins>
         - `confreg 2142` (configure register- to bypass NVRAM)
             - whenever router boots- checks for config in NVRAM and loads it to RAM
             - password stored in NVRAM > startup-config
         - `reset`\- to restart router
-    - `en`
-    - `show start` - pass will be shown
-    - `copy startup-config running-config`\- filename pop
-    - yes
-    - `conf t`
-    - `no enable password` or `enable password <pass>`
-    - `do write`
-    - restart router (still register no changed- NVRAM still bypass) Ctrl+ C
-    - `en`
-    - `copy startup-config running-config`
-    - `conf t`
-    - `config-register 2102` - checks NVRAM and load config to RAM
-    - `do write`
-    - restart router
+    2.  **Bring config into RAM without passwords**
+        1.  `en`
+        2.  (optional)`show start` - pass will be shown
+        3.  `copy startup-config running-config` (loads/Brings config into RAM without applying pass)
+        4.  filename pop- yes
+    3.  **Change passwords & restart router**
+        - `conf t`
+        - `no enable password` or `enable password <pass>` or username with pass
+        - `do write`
+        - restart router (still register no changed- NVRAM still bypass) Ctrl+ C
+    4.  **config-register 0x2102**
+        - `en`
+        - `conf t`
+        - `config-register 2102` - checks NVRAM & load config to RAM
+    5.  **Write memory + reload**
+        - `do write memory` or `copy running-config startup-config`
+        - `reload`\- restart router
 
 * * *
 
@@ -387,9 +413,9 @@
 - Connect with console cable (disconnect all other cables)
 - Power Off switch
 - Hold Mode button (15-20s)
-    - <img src="../resources/6d70b92be6da0d4646277aeb7efcb8e7.png" alt="6d70b92be6da0d4646277aeb7efcb8e7.png" width="328" height="202" class="jop-noMdConv">
+    - <img src="../../_resources/6d70b92be6da0d4646277aeb7efcb8e7.png" alt="6d70b92be6da0d4646277aeb7efcb8e7.png" width="328" height="202" class="jop-noMdConv">
 - `flash_init`
-    - ![4bd4fca1ee6575fe00e0934ce7a1f7f6.png](../resources/4bd4fca1ee6575fe00e0934ce7a1f7f6.png)
+    - ![4bd4fca1ee6575fe00e0934ce7a1f7f6.png](../../_resources/4bd4fca1ee6575fe00e0934ce7a1f7f6.png)
 - `dir flash:/`
 - `rename flash:config.text flash:config.old` or `delete flash:config.text`
 - `boot`

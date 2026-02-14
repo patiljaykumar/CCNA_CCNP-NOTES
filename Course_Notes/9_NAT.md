@@ -129,46 +129,46 @@
 
 ### Practical
 
-- <img src="../resources/0bd2f135c2bfbf59f5f7bd9e5a59a6ca.png" alt="0bd2f135c2bfbf59f5f7bd9e5a59a6ca.png" width="396" height="262" class="jop-noMdConv"></img>
+- <img src="../../_resources/0bd2f135c2bfbf59f5f7bd9e5a59a6ca.png" alt="0bd2f135c2bfbf59f5f7bd9e5a59a6ca.png" width="396" height="262" class="jop-noMdConv"></img>
     - <ins>**Static NAT**</ins>
         
     - ```bash
-          !!!!!!!!!R1!!!!!!!!!!!!!!
-          int g0/0/1
-          ip address 192.168.1.10 255.255.255.0
-          ip nat inside
-          no sh
-          !
-          int g0/0/0
-          ip address 100.1.1.1 255.255.255.0
-          ip nat outside
-          no sh
-          !
-          ip route 0.0.0.0 0.0.0.0 100.1.1.2
-          !
-          ! static
-          ip nat inside source static 192.168.1.1 50.1.1.1
-          ip nat inside source static 192.168.1.2 50.1.1.2
-          ip nat inside source static 192.168.1.3 50.1.1.3
-              
+            !!!!!!!!!R1!!!!!!!!!!!!!!
+            int g0/0/1
+            ip address 192.168.1.10 255.255.255.0
+            ip nat inside
+            no sh
+            !
+            int g0/0/0
+            ip address 100.1.1.1 255.255.255.0
+            ip nat outside
+            no sh
+            !
+            ip route 0.0.0.0 0.0.0.0 100.1.1.2
+            !
+            ! static
+            ip nat inside source static 192.168.1.1 50.1.1.1
+            ip nat inside source static 192.168.1.2 50.1.1.2
+            ip nat inside source static 192.168.1.3 50.1.1.3
+                
         ```
         
     - ```bash
-          !!!!!!!!!!R2!!!!!!!!
-          int g0/0/0
-          ip address 100.1.1.2 255.255.255.0
-          no sh
-          !
-          int g0/0/1
-          ip address 200.1.1.10 255.255.255.0
-          no sh
-          !
-          ip route 50.1.1.0 255.255.255.0 100.1.1.1
+            !!!!!!!!!!R2!!!!!!!!
+            int g0/0/0
+            ip address 100.1.1.2 255.255.255.0
+            no sh
+            !
+            int g0/0/1
+            ip address 200.1.1.10 255.255.255.0
+            no sh
+            !
+            ip route 50.1.1.0 255.255.255.0 100.1.1.1
         ```
         
-    - NAT egress (R1)- ICMP src IP is 50.1.1.2 (for 192.168.1.2 PC) but at ARP (L2) level src IP 100.1.1.1) ![6126a5677e5f0d7b4833d1e20634920c.png](../resources/6126a5677e5f0d7b4833d1e20634920c.png)
+    - NAT egress (R1)- ICMP src IP is 50.1.1.2 (for 192.168.1.2 PC) but at ARP (L2) level src IP 100.1.1.1) ![6126a5677e5f0d7b4833d1e20634920c.png](../../_resources/6126a5677e5f0d7b4833d1e20634920c.png)
         
-    - NAT ingress (R1)- ![557d023774084b70d1ddc0de6921038f.png](../resources/557d023774084b70d1ddc0de6921038f.png)
+    - NAT ingress (R1)- ![557d023774084b70d1ddc0de6921038f.png](../../_resources/557d023774084b70d1ddc0de6921038f.png)
         
     - <ins>**Dynamic NAT (on R1)**</ins>
         
@@ -186,7 +186,7 @@
             
         - `ip nat inside source list 10 pool cisco overload`
             
-        - ![e131c742eb6d5200f6503cd7152e84ad.png](../resources/e131c742eb6d5200f6503cd7152e84ad.png)
+        - ![e131c742eb6d5200f6503cd7152e84ad.png](../../_resources/e131c742eb6d5200f6503cd7152e84ad.png)
             
 
 * * *
@@ -194,5 +194,5 @@
 - TERMS
     - **Inside local address(IL)**— private IP assigned to a host on the *inside* network. (cam assign IP other than private space)
     - **Inside global address(IG)**—routable IP assigned by NIC/ service provider (that represents one/more inside local IP addresses to outside world)
-    - **Outside local address(OL)**—IP of an outside host as it appears to the inside network. (Not necessarily a legitimate address, it is allocated from an address space routable on inside)
+    - **Outside local address(OL)**—IP of an outside host as it appears to the inside network. (May or may not be the host’s real public IP; NAT can map it, it is allocated from an address space routable on inside)
     - **Outside global address(OG)**—routable IP assigned to a host on outside network by the host owner. (address is allocated from a globally routable address/ network space)

@@ -2,8 +2,23 @@
 
 - <ins>**Group of interconnected nodes/links/devices that exchange data and share resources via a media.**</ins>
     
-- Topics- <img src="../resources/ec8b43b533766d2c1e1db7e830d7dd6d.png" alt="ec8b43b533766d2c1e1db7e830d7dd6d.png" width="243" height="277" class="jop-noMdConv">
+- Topics- <img src="../../_resources/ec8b43b533766d2c1e1db7e830d7dd6d.png" alt="ec8b43b533766d2c1e1db7e830d7dd6d.png" width="243" height="277" class="jop-noMdConv">
     
+
+* * *
+
+- **Enterprise Networks**\- corporation employees comm, school | **SOHO Network**\- Small Office/ Home Office used at home
+    
+- **Networking Model/ Architecture/ Blueprint-** set of documents(small function for net- eg protocols, voltage of cable) define structure & diff categories (layers) of standards/ protocols
+    
+- **Protocol**\- set of logical rules that devices must follow to communicate
+    
+- ==**Layers-**==  for simplification each model breaks functions into a small no. of categories called layers
+    
+- **RFC(Requests For Comments)**\- documents to define protocol in TCP/IP
+    
+
+* * *
 
 ### **Types of communication modes-** depends on Device NIC, Cable type, Config
 
@@ -58,37 +73,29 @@
         
         - eg- RG6 (TV cable max-300m-500m)
             
-        - From your wall outlet to a cable modem or TV set-top box
+        - *Connector*: F-type connector (From your wall outlet to a cable modem or TV set-top box)
             
-        - *Connector*: F-type connector
-            
-    - **Twisted** **Pair**\- *(electric signals)* pairs of insulated copper wires twisted together (twisting reduces EMI)
+    - **Twisted** **Pair**\- *(electric signals)* pairs of insulated copper wires twisted together (twisting reduces EMI) \[max 100m cables\]
         
-        - eg- Cat5, Cat5e, Cat6 Ethernet cables (LAN) <ins>\[max 100m</ins>\]
-            
         - Types
             
             - **UTP** (Unshielded Twisted Pair)- eg- Cat1,.., Cat5, Cat5e, Cat6
                 
             - **STP** (Shielded Twisted Pair) - reduces interference eg- Cat5e, Cat6, Cat6a, Cat7, Cat8(40gbps, 2GHz)
                 
-        - From a PC to a Wi-Fi router or network switch
+        - *Connector*: RJ45 connector(From a PC to a Wi-Fi router or network switch)
             
-        - *Connector*: RJ45 connector
-            
-    - **Fiber** **Optics**\- *(light signals)* uses total internal reflection (by optical transmitter)
+    - **Fiber** **Optics**\- *(light signals)* uses total internal reflection (by optical transmitter)(eg- Optical Fiber Cable (OFC))
         
-        - eg- Optical Fiber Cable (OFC)
+        - *<ins>Multi-Mode Fiber (OM1, OM4)</ins>\-* multiple angle of light waves \[max 2km-400Gbps\] (uses transmitter- LEDs/ VCSELs(Vertical-Cavity Surface-Emitting Lasers))
             
-            - *Single-mode fiber (OS2)-* single light path | max 100km & more without amplification (100 Gbps & more) (uses- Lasers)
-                
-                - eg- 10GBASE-LR (10km), 10GBASE-E (30km)
-            - *Multi-Mode Fiber (OM1, OM4)-* multiple angle \[max 2km-400Gbps\] (uses- LEDs/ VCSELs(Vertical-Cavity Surface-Emitting Lasers))
-                
-                - eg-10GBASE-S (400m), 10GBASE-LX4 (300m)
-        - From an ISP's fiber terminal to a fiber modem or optical network terminal (ONT)
+            - eg-10GBASE-S (400m), 10GBASE-LX4 (300m)
+        - *<ins>Single-mode fiber (OS2)</ins>\-* single light path | max 100km & more without amplification (100 Gbps & more) (uses- Laser transmitter) costly than MM
             
-        - *Connector*: SFP/SFP+ transceiver- LC/ SC/ RJ45 connector
+            - eg- 10GBASE-LR(10km), 10GBASE-E(30km), 1000BASE-ZX(70km)
+        - *Connector*: SFP/SFP+ transceiver- LC/ SC/ RJ45 connector (From ISP's fiber terminal to a fiber modem/ optical network terminal (ONT))
+            
+        - **SFP(Small Form-Factor Pluggable)-** <ins>1Gbps</ins> int on switch | **SFP+-** <ins>10Gbps</ins> int on switch
             
 2.  ### **Unguided** (do not physically guide the signal along fixed path) <ins>form</ins>\- \[electromagnetic waves\]
     
@@ -103,20 +110,19 @@
 
 ### **Communication Methods**
 
-- **Unicast**\- eg- video call btw 2 people (one-to-one data transmission) (unicast address- single LAN int)
+- **Unicast**\- eg- video call btw 2 people (one-to-one data transmission) (unicast address- single LAN int MAC)
     
 - **Multicast**\- eg- live stream to subscribers (one-to-many= net comm method were 1 sender sends data packet to grp of recipients simultaneously)
     
-- **Broadcast**\- eg- wifi routers sending signal
+- **Broadcast**\- eg- wifi routers sending signal (one-to-all)
     
-- **Anycast-** same single IP is assigned to multiple devices(nodes) & packet sent to that address is routed to nearest node int in grp based on RProtocol (note- multiple devices must be reachable via different routing paths) 
+- **Anycast-** same single IP is assigned to multiple devices(nodes) & packet sent to that address is routed to nearest node int in grp based on RProtocol (note- multiple devices must be reachable via different routing paths)
     
     - eg- 8.8.8.8- DNS- directs traffic to nearest server, DDOS mitigation
         
-    - <img src="../resources/6fd879cdbb2e0aff2574b58c45646899.png" alt="6fd879cdbb2e0aff2574b58c45646899.png" width="237" height="99">
+    - <img src="../../_resources/6fd879cdbb2e0aff2574b58c45646899.png" alt="6fd879cdbb2e0aff2574b58c45646899.png" width="237" height="99" class="jop-noMdConv">
         
         - **Path 1: Client → R-Core → R1 → S1** | **Path 2: Client → R-Core → R2 → S2**
-            
 
 * * *
 
@@ -131,43 +137,36 @@
 
 - **T568 A**
 - **T568 B**
-    - **<img src="../resources/73c0536e42192cd33d75585c236ec2c5.png" alt="73c0536e42192cd33d75585c236ec2c5.png" width="100" height="197" class="jop-noMdConv">**
-- ![7a9ead452b1c5f0215852a0a3df4a296.png](../resources/7a9ead452b1c5f0215852a0a3df4a296.png)
+    - **<img src="../../_resources/73c0536e42192cd33d75585c236ec2c5.png" alt="73c0536e42192cd33d75585c236ec2c5.png" width="100" height="197" class="jop-noMdConv">**
+- ![7a9ead452b1c5f0215852a0a3df4a296.png](../../_resources/7a9ead452b1c5f0215852a0a3df4a296.png)
 
 * * *
 
 ### **Ethernet port configurations**
 
-- **MDI (Medium Dependent Interface)-** pinout/port config on a device to connect diff device with MDI-X int (switch, hub)
+- **MDI (Medium Dependent Interface)-** ==Routers, PC NICs(Ethernet ports), Servers, WAP, IP phone==
     
-    - devices use **pins 1 & 2**\- <ins>transmit</ins> data | **pins 3 & 6-** <ins>receive</ins> data.
-        
-    - eg MDI devices- Routers, PC NICs(Ethernet ports), Servers, WAP, IP phone
-        
-- **MDI-X (Medium Dependent Interface Crossover)**\- pinout/port config on a device to connect another MDI-X device (switch-switch, router-router)
+    - pinout/port config- devices NIC use **pins 1 & 2**\- <ins>transmit</ins> data(TX) | **pins 3 & 6-** <ins>receive</ins> data(RX)
+- **MDI-X (Medium Dependent Interface Crossover)**\- ==Switch, Hub==
     
-    - devices use **pins 1 & 2**\- <ins>receive</ins> data | **pins 3 & 6**\- <ins>transmit</ins> data.
-        
-    - eg MDI-X devices- Switches, Hub
-        
+    - pinout/port config- devices NIC use **pins 1 & 2**\- <ins>receive</ins> data(RX) | **pins 3 & 6**\- <ins>transmit</ins> data(TX)
 
 * * *
 
 ### **Network Cabling**
 
-- **Straight through cable**\- unlike port configurations (==MDI-MDIX==) (Both side T568A or T568B)
-    - MDI to MDI-X device (100Mbps)-<img src="../resources/e81527309013466d6d563780e6cce7f3.png" alt="e81527309013466d6d563780e6cce7f3.png" width="279" height="150" class="jop-noMdConv">
-        - 10BASE-T, 100BASE-TX :- 100= 100Mbps | BASE= Ethernet transmission | T- twisted pair cable
+- **Straight through cable**\- If endpoints transmit on diff pin pairs (==MDI-MDIX==) (Both side T568A/T568B) eg-==(PC connected to Switch/Hub), (Router-Switch/Hub), (Server-Switch/Hub)==
+    - 100Mbps-<img src="../../_resources/e81527309013466d6d563780e6cce7f3.png" alt="e81527309013466d6d563780e6cce7f3.png" width="279" height="150" class="jop-noMdConv">
+        - 10BASE-T, 100BASE-T :- 100= 100Mbps | BASE= Ethernet transmission | T- twisted pair cable
         - PoE(802.3af/at)- Power over Ethernet can be done with 4,5,7,8 pins (not sure- or 7,8- POE | 4,5- Earthing)
-    - 1Gbps-  <img src="../resources/11f142e402f3def69fd60cf83b44a135.png" alt="11f142e402f3def69fd60cf83b44a135.png" width="260" height="141" class="jop-noMdConv">
-        - All 4 pairs are used for data transmission (DA- Data A)
-    - ==eg Straight cable- (PC connected to Switch/Hub), (Router-Switch/Hub), (Server-Switch/Hub)==
-- **Crossover cable**\- (like devices)same port config (==MDI-MDI & MDIX-MDIX==) (One side T568A, other side T568B)
-    - MDI-MDI/ MDIX to MDIX devices (100Mbps)- <img src="../resources/938db3a568f4ac0e228b46206fc40df5.png" alt="938db3a568f4ac0e228b46206fc40df5.png" width="291" height="156" class="jop-noMdConv">
-    - 1Gbps- <img src="../resources/195fcbca50e7fe98ed55f2c29d226978.png" alt="195fcbca50e7fe98ed55f2c29d226978.png" width="333" height="169" class="jop-noMdConv">
-    - ==**eg Cross-Over cable(MDI-MDI/MDIX-MDIX) - (PC-Router), (Router-WAP), (Router-Server), (Router-Router), (PC-PC), (Switch/Hub- Switch/Hub)**==
+    - 1Gbps-  <img src="../../_resources/11f142e402f3def69fd60cf83b44a135.png" alt="11f142e402f3def69fd60cf83b44a135.png" width="260" height="141" class="jop-noMdConv">
+        - All 4 pairs are used for data transmission simultaneously (DA- Data A)
+- **Crossover cable**\- If endpoints transmit on same pin pair. same port config (==MDI-MDI & MDIX-MDIX==) (One side T568A, other side T568B) eg-==**(PC-Router), (Router-WAP), (Router-Server), (Router-Router), (PC-PC), (Switch/Hub- Switch/Hub)**==
+    - 100Mbps-<img src="../../_resources/938db3a568f4ac0e228b46206fc40df5.png" alt="938db3a568f4ac0e228b46206fc40df5.png" width="291" height="156" class="jop-noMdConv">
+    - 1Gbps- <img src="../../_resources/195fcbca50e7fe98ed55f2c29d226978.png" alt="195fcbca50e7fe98ed55f2c29d226978.png" width="333" height="169" class="jop-noMdConv">
 - **Rollover cable**\- console cable
-- Now a days ==**Auto MDIX**==\- electrical pulses to sense cable pinout(switches/redirect e-signals btw T to R auto) is present in all network devices (so we use straight through cables for all)
+    - <img src="../../_resources/dce98bf30dc38369eeaee26740191073.png" alt="dce98bf30dc38369eeaee26740191073.png" width="270" height="176" class="jop-noMdConv">
+- Now a days ==**Auto MDIX**==\- electrical pulses to sense cable pinout(swaps/redirect e-signals btw T to R auto) is present in all network devices (so we use straight through cables for all)
     - if switch- need to enable it on switch int \[1 side or both\] - `mdix auto` | verify- `sh int <int> transceiver properties`
 
 * * *
@@ -209,14 +208,7 @@
     
 - **Switch-** *(L2/L3)* forwards data using MAC Table, error detection(FCS), QoS, VLAN (==separate collision domain for each port & same broadcast domain==\- learns device connected to which port via MAC)(available ports- 5, 8, 10, 16, 24, 28, 48/52) \[==**separate collision domain**\- each port can send & receive at the same time(each port fabric to all ports) working independently (collision is rare- eg- faulty cable, hub connected to switch)==\]
     
-    - Unmanaged
-        
-    - Managed
-        
-    - L3 switch
-        
-    - POE (Power over Ethernet)- IEEE 802.3af (& at,bt) | eg- camera
-        
+    - types- Unmanaged, Managed, L3 switch, POE(Power over Ethernet)- IEEE 802.3af (& at,bt)- eg- camera
 - **Router-** *(L3)* routes data btw diff networks/ subnets and assigns IP
     
 - **Firewall-** *(<ins>L2-7</ins>)* monitors and controls incoming and outgoing network traffic based on predefined security rules
@@ -234,12 +226,15 @@
     
     - creation & management of network frames, MAC, error detection
     - convert data signals into a format suitable for network transmission and receive incoming signals
+    - PC has RJ45 ports as NIC(Network Interface card) which can be  expansion card or built into system
+        
+        - <img src="../../_resources/b8c4783866b56ba9bfcd450b718e1d4d.png" alt="b8c4783866b56ba9bfcd450b718e1d4d.png" width="168" height="179" class="jop-noMdConv">
 
 * * *
 
 ### Definitions
 
-- **WiFi**\- *(L1,L2)* wireless networking technology that allows devices to connect to the internet and communicate with each other using radio waves
+- **WiFi**\- *(L1,L2)* wireless networking technology that allows devices to connect to the network(mostly internet) & communicate with each other using radio waves
 - **MAC address**\- 6B L2 address globally unique, required for every device that connects to LAN (burnt-in NIC) `getmac`
 
 * * *
@@ -248,15 +243,15 @@
 
 - | L2 Switch | L3 Switch |
     | --- | --- |
-    | L2 (forwards frames based on MAC) | L3 with L2 support (routes packets based on IP + switching) |
-    | single broadcast domain, same net comm | multiple broadcast domain, multi net comm |
+    | L2 (forwards frames based on MAC Table) | L3 with L2 support (routes packets based on IP table, frames MAC Table) |
+    | single broadcast domain, same net comm | can segment into multiple broadcast domain, multi net comm |
     | Faster (only switching, no routing overhead) | Slower (examine L3 data packets too) |
-    | VLAN tagging (ACL, QOS) | Inter-VLAN routinig (ACL, QOS) |
+    | VLAN tagging (ACL, QOS) | Inter-VLAN routing (ACL, QOS) |
     | Cheap | Costly |
     
 - | Router | L3 Switch |
     | --- | --- |
     | L3 (high cost) | L3 with L2 support (data transfer with multi-devices across- LANs, VLANs, subnet), more ports |
-    | Slow speed- additional processing overhead (software & hardware based routing) | Faster- optimized for inter-VLAN routing (hardware based switching- high traffic speed) ASICs |
-    | Large RT to support multiple route entire | Smaller routing table compared to router |
-    | Supports NAT, VPN, Firewall, QoS, etc. | Limited/no support for WAN, NAT/VPN |
+    | Slow speed- additional processing overhead (software & hardware based routing) | Faster- optimized for inter-VLAN routing, CEF using ASICs (hardware based switching- high traffic speed) |
+    | Large RT to support multiple route entries (eg- BGP) | Smaller routing table compared to router |
+    | Supports NAT, VPN, MPLs, Firewall, etc. | Limited/no support for WAN, NAT/VPN |

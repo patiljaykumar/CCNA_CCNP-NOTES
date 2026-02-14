@@ -141,16 +141,16 @@
     - **UDP**\- DNS, TFTP, DHCP, NTP
     - **ICMP**\- Ping, Traceroute
 - <ins>**Practical**</ins>
-- ![917222a3219ea195bb131ba257d7a748.png](../resources/917222a3219ea195bb131ba257d7a748.png)
+- ![917222a3219ea195bb131ba257d7a748.png](../../_resources/917222a3219ea195bb131ba257d7a748.png)
     
     - **Std ACL (cond 1)**
         - **R1(numbered)**
             - ```bash
-                access-list 1 deny 30.1.1.1
-                access-list 1 permit any
-                !
-                int g0/0
-                ip access-group 1 out
+	            access-list 1 deny 30.1.1.1
+	            access-list 1 permit any
+	            !
+	            int g0/0
+	            ip access-group 1 out
                 ```
                 
         - **R1(named)**
